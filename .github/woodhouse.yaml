@@ -1,5 +1,6 @@
 repository:
-  has_issues: false     # overrides the baseline's `true`
+  has_issues: true     # overrides the baseline's `true`
+  private: true
 
 gatekeeper:
   strictChecks: []
