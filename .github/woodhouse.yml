@@ -1,0 +1,6 @@
+repository:
+  has_issues: false     # overrides the baseline's `true`
+
+gatekeeper:
+  ignoredChecks:
+    - advisory

@@ -1,0 +1,48 @@
+name: CI
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build
+        run: |
+          if [[ "${{ github.event.pull_request.title }}" == *"[fail-build]"* ]]; then
+            echo "failing on request"; exit 1
+          fi
+          echo ok
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        run: |
+          if [[ "${{ github.event.pull_request.title }}" == *"[fail-test]"* ]]; then
+            echo "failing on request"; exit 1
+          fi
+          echo ok
+
+  slow:
+    # Hold the suite in progress long enough to observe a pending gatekeeper.
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          if [[ "${{ github.event.pull_request.title }}" == *"[slow]"* ]]; then
+            sleep 120
+          fi
+          echo ok
+
+  optional:
+    # Skipped unless requested, producing a `skipped` conclusion.
+    if: contains(github.event.pull_request.title, '[run-optional]')
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ok
+
+  advisory:
+    # Always fails, and is in ignoredChecks, so must not affect the verdict.
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - run: exit 1
