@@ -4,3 +4,7 @@ repository:
 gatekeeper:
   ignoredChecks:
     - advisory
+
+branchProtection:
+  main:
+    enforce_admins: true
