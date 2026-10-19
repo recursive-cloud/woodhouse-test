@@ -12,3 +12,5 @@ branchProtection:
     enforce_admins: true
 
 # acceptance 5.12 permission probe
+
+# acceptance 5.13 plan-limit probe
