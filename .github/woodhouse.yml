@@ -1,3 +1,6 @@
+settings:
+  enabled: false
+
 repository:
   has_issues: false     # overrides the baseline's `true`
   allow_auto_merge: true
