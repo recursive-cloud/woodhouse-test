@@ -15,3 +15,5 @@ branchProtection:
 # acceptance 5.12 permission probe
 
 # acceptance 5.13 plan-limit probe
+
+# acceptance 5.17 feature-branch merge probe
