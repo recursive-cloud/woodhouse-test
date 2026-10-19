@@ -6,3 +6,4 @@ Repository under test for the Woodhouse acceptance run (2026-10-19).
 5.6 rename trigger (acceptance 5.6).
 5.7 idempotency probe (acceptance 5.7).
 5.8 prune trigger (acceptance 5.8).
+Phase 6 end-to-end happy path, re-run (acceptance 6).
