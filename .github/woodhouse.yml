@@ -4,3 +4,5 @@ repository:
 gatekeeper:
   ignoredChecks:
     - advisory
+
+# acceptance 3.9 protected-path probe
