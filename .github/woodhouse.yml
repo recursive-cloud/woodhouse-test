@@ -8,3 +8,5 @@ gatekeeper:
 branchProtection:
   main:
     enforce_admins: true
+  nonexistent:
+    enforce_admins: true
